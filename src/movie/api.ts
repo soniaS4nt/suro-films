@@ -1,9 +1,9 @@
 import axios from "axios";
-import { Films, Param } from "@/types";
+import { Param } from "@/types";
 
 export const URL = "https://api.themoviedb.org/3/movie";
 
-export const getMovies = async (param: Param): Promise<Films> => {
+export const getMovies = async (param: Param) => {
   try {
     const response = await axios.get(`${URL}/${param}`, {
       params: {
