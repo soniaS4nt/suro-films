@@ -38,17 +38,6 @@ export enum OriginalLanguage {
 }
 export type Param = "upcoming" | "popular" | string;
 
-/* export type Param = ParamEnum | string;
-
-export enum ParamEnum {
-  Up = ,
-  Pop = ,
-}
- */
-/* export interface Id extends Param {
-  id: string;
-}
- */
 export interface MovieDetailI extends MovieI {
   belongs_to_collection: null;
   budget: number;
@@ -62,6 +51,7 @@ export interface MovieDetailI extends MovieI {
   spoken_languages: SpokenLanguage[];
   status: string;
   tagline: string;
+  credits: Credits;
 }
 
 export interface Genre {
@@ -80,4 +70,27 @@ export interface SpokenLanguage {
   english_name: string;
   iso_639_1: string;
   name: string;
+}
+
+export interface Credits {
+  id: number;
+  cast: Cast[];
+  crew: Cast[];
+}
+
+export interface Cast {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: null | string;
+  cast_id?: number;
+  character?: string;
+  credit_id: string;
+  order?: number;
+  department?: string;
+  job?: string;
 }

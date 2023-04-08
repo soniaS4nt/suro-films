@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar-thumb-gradient {
+    scrollbar-color: #fff #e5e7eb;
+     /* background-image: linear-gradient(to bottom, #fff 0%, #e5e7eb 100%); */
+  }
+  
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #f1f1f12f;
+    background-image: linear-gradient(to bottom, #eff0f55e 0%, #5a5d61 100%);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
