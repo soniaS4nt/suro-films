@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>Sudo Films</title>
       </Head>
-      <main className="container mx-auto border">
+      <main className="container mx-auto ">
         <h1 className="text-center   font-extrabold p-5 lg:text-8xl sm:text-5xl">
           <span className="font-thin text-red  lg:text-8xl sm:text-5xl">
             {">"}
