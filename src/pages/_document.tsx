@@ -4,10 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="container h-screen mx-auto">
-        <Main />
-        <NextScript />
-      </body>
+      <Main />
+      <NextScript />
     </Html>
   );
 }

@@ -22,3 +22,8 @@
     border-radius: 10px;
     background-color: transparent;
   }
+
+  .bg-img-blur {
+    background-image: url("https://image.tmdb.org/t/p/original/A3ZbZsmsvNGdprRi2lKgGEeVLEH.jpg");
+    
+  }

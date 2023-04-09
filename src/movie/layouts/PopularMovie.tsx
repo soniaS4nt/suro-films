@@ -11,7 +11,7 @@ export default function PopularMovie() {
         <Loading />
       ) : (
         popular?.results.map((movie) => (
-          <div className="" key={movie.id}>
+          <div key={movie.id}>
             <Movie movie={movie} />
           </div>
         ))

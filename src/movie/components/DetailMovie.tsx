@@ -1,5 +1,5 @@
 import Img from "@/movie/components/Img";
-import { MovieDetailI } from "@/types";
+import { MovieDetailI } from "@/movie/types";
 import Footer from "../layouts/Footer";
 
 interface Props {
@@ -10,17 +10,31 @@ export default function DetailMovieComponent({ detail }: Props) {
   const { cast, crew } = detail?.credits;
 
   return (
-    <div className="container p-5 h-screen">
-      <h1 className="text-center font-bold text-600 my-2">{detail.title}</h1>
-      <div className="flex flex-col items-center bg-gray-light rounded-2xl">
+    <div className="container p-5 h-screen ">
+      <h1 className="text-center font-bold my-2">{detail.title}</h1>
+      <div className="flex flex-col items-center relative">
+        <div
+          className={` rounded-2xl`}
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${detail.poster_path})`,
+            objectFit: "cover",
+            width: "100%",
+            height: "100%",
+            filter: "10px",
+            opacity: "0.5",
+            position: "absolute",
+            zIndex: -1,
+          }}
+        ></div>
         <Img
-          className="rounded-2xl w-96 p-2"
+          className="rounded-2xl w-96 p-2 h-auto "
           src={detail.poster_path}
           alt={detail.title}
           width={200}
           height={300}
         />
       </div>
+
       {/* agregar condicional de imagen */}
       <div className="flex lg:flex-row gap-2 sm:flex-col">
         <Img
@@ -61,9 +75,7 @@ export default function DetailMovieComponent({ detail }: Props) {
           </div>
         ))}
       </div>
-      <h1 className="text-center font-bold text-600 my-2">
-        Miembros de producción
-      </h1>
+      <h1 className="text-center font-bold my-2">Miembros de producción</h1>
       <div className="w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll p-10 ">
         {crew?.map((crew, index) => (
           <div

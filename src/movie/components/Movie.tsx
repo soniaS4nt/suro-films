@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { MovieI } from "@/types";
+import { MovieI } from "@/movie/types";
 import Img from "@/movie/components/Img";
 
 interface Props {

@@ -23,7 +23,7 @@ npm install
 3. Crear un archivo .env.local en la raíz del proyecto y agregar la siguiente variable de entorno:
 
 ```bash
-NEXT_PUBLIC_API_KEY=[aqui tu api key]
+NEXT_PUBLIC_API_KEY=aquí tu api key
 ```
 
 La clave de API debe ser obtenida en de The Movie Database [(TMDb)](https://www.themoviedb.org/documentation/api).

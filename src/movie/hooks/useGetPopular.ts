@@ -1,5 +1,5 @@
 import { getMovies } from "@/movie/api";
-import { Films } from "@/types";
+import { Films } from "@/movie/types";
 import { useEffect, useState } from "react";
 
 const useGetPopular = () => {

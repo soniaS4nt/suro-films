@@ -1,5 +1,5 @@
 import { getMovies } from "@/movie/api";
-import { MovieDetailI } from "@/types";
+import { MovieDetailI } from "@/movie/types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 

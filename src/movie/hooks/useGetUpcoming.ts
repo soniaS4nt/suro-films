@@ -1,5 +1,5 @@
 import { getMovies } from "@/movie/api";
-import { Films, Param } from "@/types";
+import { Films, Param } from "@/movie/types";
 import { useEffect, useState } from "react";
 
 const useGetUpcoming = () => {

@@ -1,4 +1,4 @@
-function Loading() {
+export default function Loading() {
   return (
     <div className="flex justify-center h-screen items-center mx-10 ">
       <svg
@@ -25,5 +25,3 @@ function Loading() {
     </div>
   );
 }
-
-export default Loading;

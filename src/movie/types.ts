@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export interface Films {
   dates?: Dates;
   page: number;
