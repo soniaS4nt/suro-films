@@ -6,10 +6,12 @@ interface Props {
 }
 
 export default function DetailMovieComponent({ detail }: Props) {
+  const { cast, crew } = detail?.credits;
+
   return (
-    <div className="container m-4 p-10 border">
+    <div className="container p-5">
       <h1 className="text-center font-bold text-600 my-2">{detail.title}</h1>
-      <div className="border  flex flex-col items-center">
+      <div className="  flex flex-col items-center bg-gray">
         <Img
           className="rounded-2xl w-96 p-2"
           src={detail.poster_path}
@@ -19,7 +21,7 @@ export default function DetailMovieComponent({ detail }: Props) {
         />
       </div>
 
-      <div className="flex lg:flex-row gap-2 sm:flex-col border">
+      <div className="flex lg:flex-row gap-2 sm:flex-col">
         <Img
           className="rounded-2xl w-56 p-2"
           alt={detail.title}
@@ -29,12 +31,12 @@ export default function DetailMovieComponent({ detail }: Props) {
         />
         <p className="text-justify m-1 p-1">{detail.overview}</p>
       </div>
-      <h1 className="text-center font-bold text-600 my-2">Cast</h1>
-      <div className="w-full sm:max-h-screen snap-x-mandatory scrollbar-thumb-gradient flex overflow-x-scroll p-10 ">
-        {detail.credits?.cast.map((cast) => (
+      <h1 className="text-center font-bold text-600 my-2">Reparto</h1>
+      <div className="w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll p-10 ">
+        {cast?.map((cast) => (
           <div
             key={cast.id}
-            className="sm:w-1/2 lg:w-1/5  flex-none px-2 rounded-2xl shadow-lg m-2 p-2"
+            className="sm:w-2/3 md:w-1/4 lg:w-1/5  flex-none p-2 rounded-2xl shadow-lg m-2"
           >
             {!cast.profile_path ? (
               <img
@@ -51,9 +53,41 @@ export default function DetailMovieComponent({ detail }: Props) {
                 height={50}
               />
             )}
-
-            <h1 className="font-semibold">{cast.name}</h1>
-            <p>{cast.character}</p>
+            <div className="">
+              <h1 className="font-semibold">{cast.name}</h1>
+              <p>{cast.character}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <h1 className="text-center font-bold text-600 my-2">
+        Miembros de producción
+      </h1>
+      <div className="w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll p-10 ">
+        {crew?.map((crew, index) => (
+          <div
+            key={index}
+            className="sm:w-2/3 md:w-1/4 lg:w-1/5  flex-none p-2 rounded-2xl shadow-lg m-2"
+          >
+            {crew.profile_path ? (
+              <Img
+                className="w-full object-contain rounded-2xl"
+                alt={crew.name}
+                src={crew.profile_path}
+                width={50}
+                height={50}
+              />
+            ) : (
+              <img
+                className="w-full object-contain rounded-2xl"
+                src="https://geografia.departamentos.uva.es/wp-content/uploads/2017/06/sin-foto-hombre.jpg"
+                alt={crew.name}
+              />
+            )}
+            <div className="">
+              <h1 className="font-semibold">{crew.name}</h1>
+              <p>{crew.job}</p>
+            </div>
           </div>
         ))}
       </div>

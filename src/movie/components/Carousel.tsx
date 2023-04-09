@@ -6,10 +6,10 @@ export default function Carousel() {
   const { upcoming } = useGetUpcoming();
 
   return (
-    <div className=" w-full sm:max-h-screen snap-x-mandatory scrollbar-thumb-gradient flex overflow-x-scroll p-10 ">
+    <div className=" w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll  p-7  mx-2">
       {upcoming?.results.map((movie) => (
         <div
-          className="sm:w-1/2 lg:w-1/5  flex-none px-2 rounded-2xl shadow-lg m-2 p-2"
+          className="sm:w-1/2 lg:w-1/5  flex-none px-2 rounded-2xl shadow-lg mx-2 p-2"
           key={movie.id}
         >
           <Link href={`/${movie.id}`}>

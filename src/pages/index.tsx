@@ -11,19 +11,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>Sudo Films</title>
       </Head>
-      <main className="container mx-auto ">
-        <h1 className="text-center   font-extrabold p-5 lg:text-8xl sm:text-5xl">
-          <span className="font-thin text-red  lg:text-8xl sm:text-5xl">
+      <main className="container min-h-full mx-auto">
+        <h1 className="text-center font-extrabold p-5 lg:text-8xl sm:text-5xl">
+          <span className="font-thin text-red  lg:text-8xl sm:text-6xl">
             {">"}
           </span>
           Sudo Films
         </h1>
-        <div className="flex flex-row">
+        <div className="flex m-2 ">
           <UpComingMovie />
         </div>
 
-        <hr className="w-full my-4" />
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <hr className="w-full my-10" />
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           <PopularMovie />
         </div>
       </main>
