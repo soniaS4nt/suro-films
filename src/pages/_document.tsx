@@ -1,13 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Footer from "@/movie/layouts/Footer";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body className="container h-screen mx-auto">
         <Main />
-        <Footer />
         <NextScript />
       </body>
     </Html>

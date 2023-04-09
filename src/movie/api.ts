@@ -16,6 +16,6 @@ export const getMovies = async (param: Param) => {
     const { data } = response;
     return data;
   } catch (error) {
-    console.log(error);
+    throw new Error("Error al obtener las películas");
   }
 };

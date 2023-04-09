@@ -1,5 +1,6 @@
 import Img from "@/movie/components/Img";
 import { MovieDetailI } from "@/types";
+import Footer from "../layouts/Footer";
 
 interface Props {
   detail: MovieDetailI;
@@ -9,9 +10,9 @@ export default function DetailMovieComponent({ detail }: Props) {
   const { cast, crew } = detail?.credits;
 
   return (
-    <div className="container p-5">
+    <div className="container p-5 h-screen">
       <h1 className="text-center font-bold text-600 my-2">{detail.title}</h1>
-      <div className="  flex flex-col items-center bg-gray">
+      <div className="flex flex-col items-center bg-gray-light rounded-2xl">
         <Img
           className="rounded-2xl w-96 p-2"
           src={detail.poster_path}
@@ -20,7 +21,7 @@ export default function DetailMovieComponent({ detail }: Props) {
           height={300}
         />
       </div>
-
+      {/* agregar condicional de imagen */}
       <div className="flex lg:flex-row gap-2 sm:flex-col">
         <Img
           className="rounded-2xl w-56 p-2"
@@ -53,7 +54,7 @@ export default function DetailMovieComponent({ detail }: Props) {
                 height={50}
               />
             )}
-            <div className="">
+            <div className="text-center mt-2">
               <h1 className="font-semibold">{cast.name}</h1>
               <p>{cast.character}</p>
             </div>
@@ -84,13 +85,14 @@ export default function DetailMovieComponent({ detail }: Props) {
                 alt={crew.name}
               />
             )}
-            <div className="">
+            <div className="text-center mt-2">
               <h1 className="font-semibold">{crew.name}</h1>
               <p>{crew.job}</p>
             </div>
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
