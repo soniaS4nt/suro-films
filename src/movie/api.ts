@@ -1,16 +1,16 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { Param } from "@/movie/types";
 
 export const URL = "https://api.themoviedb.org/3/movie";
+export const URL_IMG = "https://image.tmdb.org/t/p/original";
 
 export const getMovies = async (param: Param) => {
   try {
-    const response = await axios.get(`${URL}/${param}`, {
+    const response: AxiosResponse = await axios.get(`${URL}/${param}`, {
       params: {
-        api_key: process.env.NEXT_PUBLIC_API_KEY,
-        query: param,
+        api_key: process.env.NEXT_PUBLIC_API_KEY!,
+        param: param,
         append_to_response: "credits",
-        page: 1,
       },
     });
 
@@ -18,6 +18,7 @@ export const getMovies = async (param: Param) => {
 
     return data;
   } catch (error) {
+    return { error };
     throw new Error("Error al obtener las películas");
   }
 };
