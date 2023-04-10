@@ -1,9 +1,12 @@
 import Head from "next/head";
 import PopularMovie from "@/movie/layouts/PopularMovie";
 import UpComingMovie from "@/movie/layouts/UpComingMovie";
-import Footer from "@/movie/layouts/Footer";
+import Loading from "@/movie/components/Loading";
+import useGetPopular from "@/movie/hooks/useGetPopular";
 
 export default function Home() {
+  const { loading } = useGetPopular();
+
   return (
     <>
       <Head>
@@ -12,22 +15,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>Sudo Films</title>
       </Head>
-      <main className="container h-screen mx-auto">
-        <h1 className="text-center font-extrabold p-5 lg:text-8xl sm:text-5xl">
-          <span className="font-thin text-red  lg:text-8xl sm:text-6xl">
-            {">"}
-          </span>
-          Sudo Films
-        </h1>
+      <main>
         <div className="m-2">
           <UpComingMovie />
         </div>
 
-        <hr className="w-full my-10" />
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-          <PopularMovie />
-        </div>
-        <Footer />
+        <hr className="w-full my-20" />
+        {!loading ? (
+          <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+            <PopularMovie />
+          </div>
+        ) : (
+          <Loading />
+        )}
       </main>
     </>
   );

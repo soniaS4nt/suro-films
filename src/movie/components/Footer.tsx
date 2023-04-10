@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className=" text-center bottom-0 w-full  h-32 p-10 border-t-2 mt-10 ">
+    <footer className=" bottom-0 text-center  w-full  h-32 p-10 border-t-2 mt-32">
       <p>Hecho con 🧡 por Sonia Chaparro</p>
     </footer>
   );

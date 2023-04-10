@@ -5,9 +5,11 @@ module.exports = {
       sm: "320px",
       md: "568px",
       lg: "976px",
-      xl: "1440px",
+      xl: "1500px",
+      xxl: "1600px",
     },
     colors: {
+      white: "#FFFFFF",
       blue: "#1fb6ff",
       pink: "#ff49db",
       red: "#ff0000",

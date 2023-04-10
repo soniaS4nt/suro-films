@@ -21,7 +21,7 @@ const useGetDetail = () => {
         setDetail(data);
         setError(false);
       } catch (error) {
-        setError(true);
+        setError(error);
       }
     }
 
