@@ -6,7 +6,7 @@ interface Props {
   movie: MovieI;
 }
 
-export default function MovieComponent({ movie }: Props): JSX.Element {
+export default function MovieCard({ movie }: Props): JSX.Element {
   return (
     <div
       key={movie.id}

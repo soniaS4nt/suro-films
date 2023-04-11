@@ -1,5 +1,5 @@
 import useGetPopular from "@/movie/hooks/useGetPopular";
-import Movie from "@/movie/components/Movie";
+import MovieCard from "@/movie/components/MovieCard";
 
 export default function PopularMovie() {
   const { popular } = useGetPopular();
@@ -8,7 +8,7 @@ export default function PopularMovie() {
     <>
       {popular?.results.map((movie) => (
         <div key={movie.id}>
-          <Movie movie={movie} />
+          <MovieCard movie={movie} />
         </div>
       ))}
     </>
