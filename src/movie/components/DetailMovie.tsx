@@ -1,13 +1,13 @@
-import Img from "@/movie/components/Img";
-import { MovieDetailI } from "@/movie/types";
-import { URL_IMG } from "@/movie/api";
+import Img from '@/movie/components/Img'
+import { MovieDetailI } from '@/movie/types'
+import { URL_IMG } from '@/movie/api'
 
 interface Props {
-  detail: MovieDetailI;
+  detail: MovieDetailI
 }
 
 export default function DetailMovieComponent({ detail }: Props) {
-  const { cast, crew } = detail?.credits;
+  const { cast, crew } = detail?.credits
 
   return (
     <>
@@ -19,12 +19,12 @@ export default function DetailMovieComponent({ detail }: Props) {
           className={` rounded-2xl`}
           style={{
             backgroundImage: `url(${URL_IMG}${detail.poster_path})`,
-            objectFit: "cover",
-            width: "100%",
-            height: "100%",
-            filter: "10px",
-            opacity: "0.5",
-            position: "absolute",
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
+            filter: '10px',
+            opacity: '0.5',
+            position: 'absolute',
             zIndex: -1,
           }}
         ></div>
@@ -45,10 +45,12 @@ export default function DetailMovieComponent({ detail }: Props) {
           width={100}
           height={150}
         />
-        <p className="text-justify mx-2  p-1">{detail.overview}</p>
+        <p className="text-justify mx-2 text-white p-1">{detail.overview}</p>
       </div>
       <div className="mt-32">
-        <h1 className="text-center font-bold text-600 my-8">Reparto</h1>
+        <h1 className="text-center text-white font-bold text-600 my-8">
+          Reparto
+        </h1>
         <div className="w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll p-10">
           {cast?.map((cast) => (
             <div
@@ -71,8 +73,8 @@ export default function DetailMovieComponent({ detail }: Props) {
                 />
               )}
               <div className="text-center mt-2">
-                <h1 className="font-semibold">{cast.name}</h1>
-                <p>{cast.character}</p>
+                <h1 className="font-semibold text-white">{cast.name}</h1>
+                <p className="text-white">{cast.character}</p>
               </div>
             </div>
           ))}
@@ -80,7 +82,9 @@ export default function DetailMovieComponent({ detail }: Props) {
       </div>
 
       <div className="mt-32">
-        <h1 className="text-center font-bold my-8">Miembros de producción</h1>
+        <h1 className="text-center text-white font-bold my-8">
+          Miembros de producción
+        </h1>
         <div className="w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll p-10 ">
           {crew?.map((crew, index) => (
             <div
@@ -102,14 +106,14 @@ export default function DetailMovieComponent({ detail }: Props) {
                   alt={crew.name}
                 />
               )}
-              <div className="text-center mt-2">
-                <h1 className="font-semibold">{crew.name}</h1>
-                <p>{crew.job}</p>
+              <div className="text-center mt-2 ">
+                <h1 className="font-semibold text-white ">{crew.name}</h1>
+                <p className="text-white">{crew.job}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </>
-  );
+  )
 }

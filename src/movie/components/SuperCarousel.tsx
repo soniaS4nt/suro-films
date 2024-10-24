@@ -36,7 +36,7 @@ export default function SuperCarousel({ movies }: { movies: MovieI[] }) {
   }, [])
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto py-8">
+    <div className="relative w-full mx-auto py-8">
       <div
         ref={scrollRef}
         className="flex space-x-4 overflow-x-auto scrollbar-hide"

@@ -1,6 +1,5 @@
-import Carousel from '@/movie/components/Carousel'
 import useGetUpcoming from '../hooks/useGetUpcoming'
-import SuperCarousel from '../components/SuperCarousel'
+import SuperCarousel from './SuperCarousel'
 import { MovieI } from '../types'
 
 export default function UpComingMovie() {
