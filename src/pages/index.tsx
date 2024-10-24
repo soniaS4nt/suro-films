@@ -1,11 +1,11 @@
-import Head from "next/head";
-import PopularMovie from "@/movie/layouts/PopularMovie";
-import UpComingMovie from "@/movie/layouts/UpComingMovie";
-import Loading from "@/movie/components/Loading";
-import useGetPopular from "@/movie/hooks/useGetPopular";
+import Head from 'next/head'
+import PopularMovie from '@/movie/layouts/PopularMovie'
+import UpComingMovie from '@/movie/layouts/UpComingMovie'
+import Loading from '@/movie/components/Loading'
+import useGetPopular from '@/movie/hooks/useGetPopular'
 
 export default function Home() {
-  const { loading } = useGetPopular();
+  const { loading } = useGetPopular()
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function Home() {
         <title>Sudo Films</title>
       </Head>
       <main>
-        <div className="m-2">
+        <div className="my-2">
           <UpComingMovie />
         </div>
 
@@ -30,5 +30,5 @@ export default function Home() {
         )}
       </main>
     </>
-  );
+  )
 }

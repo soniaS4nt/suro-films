@@ -1,14 +1,11 @@
-import Carousel from "@/movie/components/Carousel";
-import useGetUpcoming from "../hooks/useGetUpcoming";
+import Carousel from '@/movie/components/Carousel'
+import useGetUpcoming from '../hooks/useGetUpcoming'
+import SuperCarousel from '../components/SuperCarousel'
+import { MovieI } from '../types'
 
 export default function UpComingMovie() {
-  const { upcoming } = useGetUpcoming();
+  const { upcoming } = useGetUpcoming()
+  const movies: MovieI[] = upcoming?.results || []
 
-  return (
-    <div className=" w-full sm:max-h-screen scrollbar-thumb-gradient flex overflow-x-scroll  p-7  mx-2">
-      {upcoming?.results.map((movie) => (
-        <Carousel key={movie.id} movie={movie} />
-      ))}
-    </div>
-  );
+  return <SuperCarousel movies={movies} />
 }
