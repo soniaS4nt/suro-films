@@ -20,14 +20,8 @@ export default function Home() {
           <UpComingMovie />
         </div>
 
-        <hr className="w-full my-20" />
-        {!loading ? (
-          <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
-            <PopularMovie />
-          </div>
-        ) : (
-          <Loading />
-        )}
+        <hr className="w-full my-10" />
+        {!loading ? <PopularMovie /> : <Loading />}
       </main>
     </>
   )
