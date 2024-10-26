@@ -1,27 +1,25 @@
-import Link from "next/link";
-import { MovieI } from "@/movie/types";
-import Img from "@/movie/components/Img";
+import Link from 'next/link'
+import { MovieI } from '@/movie/types'
+import Img from '@/movie/components/Img'
 
 interface Props {
-  movie: MovieI;
+  movie: MovieI
 }
 
 export default function MovieCard({ movie }: Props): JSX.Element {
   return (
-    <div
+    <Link
+      href={`/${movie.id}`}
       key={movie.id}
-      className="xl:w-80 lg:w-72 md:w-64 sm:w-auto shadow-lg rounded-2xl m-2 p-2"
+      className="w-[20vw] shadow-lg rounded-2xl m-1"
     >
-      <Link href={`/${movie.id}`}>
-        <Img
-          className="rounded-2xl w-auto p-2"
-          src={movie.poster_path}
-          alt={movie.title}
-          width={200}
-          height={300}
-        />
-        <h1 className="text-center font-bold my-2">{movie.title}</h1>
-      </Link>
-    </div>
-  );
+      <Img
+        className="rounded-2xl w-auto"
+        src={movie.poster_path}
+        alt={movie.title}
+        width={200}
+        height={300}
+      />
+    </Link>
+  )
 }

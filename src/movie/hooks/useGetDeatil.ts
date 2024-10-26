@@ -1,36 +1,29 @@
-import { getMovies } from "@/movie/api";
-import { MovieDetailI } from "@/movie/types";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { getMovies } from '@/movie/api'
+import { MovieDetailI } from '@/movie/types'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
-const useGetDetail = () => {
-  const [detail, setDetail] = useState<MovieDetailI>();
-  const [error, setError] = useState(false);
-
-  const router = useRouter();
-  const { id } = router.query;
-
-  useEffect(() => {
-    localStorage.setItem("id", id as string);
-  }, [id]);
+const useGetDetail = (id: string) => {
+  const [detail, setDetail] = useState<MovieDetailI>()
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     async function fetchDetail() {
       try {
-        const data = await getMovies(id as string);
-        setDetail(data);
-        setError(false);
+        const data = await getMovies(id)
+        setDetail(data)
+        setError(false)
       } catch (error) {
-        setError(error);
+        setError(error)
       }
     }
 
     if (id) {
-      fetchDetail();
+      fetchDetail()
     }
-  }, [id]);
+  }, [id])
 
-  return { detail, error };
-};
+  return { detail, error }
+}
 
-export default useGetDetail;
+export default useGetDetail
