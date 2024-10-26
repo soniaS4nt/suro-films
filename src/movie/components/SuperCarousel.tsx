@@ -104,7 +104,7 @@ export default function SuperCarousel({ movies }: { movies: MovieI[] }) {
         ))}
       </div>
       <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray bg-opacity-50 hover:bg-opacity-75"
         onClick={() => handleScroll('left')}
         aria-label="Scroll left"
       >
